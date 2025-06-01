@@ -1,11 +1,10 @@
 "use client"
-import Image from "next/image";
-import { createClient } from '@supabase/supabase-js';
+// import { createClient } from '@supabase/supabase-js';
 
-const supabase = createClient(
-  process.env.NEXT_PUBLIC_SUPABASE_URL!,
-  process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
-);
+// const supabase = createClient(
+//   process.env.NEXT_PUBLIC_SUPABASE_URL!,
+//   process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
+// );
 import React, { useState, useMemo } from 'react';
 import { CheckCircle, Circle, Calendar, Users, TrendingUp, Filter } from 'lucide-react';
 
@@ -205,7 +204,7 @@ const ProjectTracker = () => {
   const [searchTerm, setSearchTerm] = useState('');
 
   // Toggle task completion
-  const toggleTask = (epicId, taskIndex) => {
+  const toggleTask = (epicId: number, taskIndex: number) => {
     const taskId = `${epicId}-${taskIndex}`;
     const newCompleted = new Set(completedTasks);
     
